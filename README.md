@@ -13,7 +13,7 @@ map.set(['foo', 'var'], 'test1');
 
 map.set(['foo2', 'var'], 'test2');
 
-map.set(['foo, 'var2'], 'test3');
+map.set(['foo', 'var2'], 'test3');
 
 map.get('foo', 'var'); // return 'test1'
 
