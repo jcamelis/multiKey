@@ -8,11 +8,7 @@
 		this.keys = {};
 		this.value = null;
 	}
-	/**
-	* @public
-	* @param {array}
-	* @param {value} Object
-	*/
+
 	MultiKey.prototype.set = function(args, value) {
 		var key = args.shift();
 		if (!this.keys[key]) {
@@ -35,7 +31,7 @@
 		if (key && this.keys[key]) {
 			return this.keys[key].get(args);
 		}
-		return this.value;
+		return this.value || this;
 	}
 
 	MultiKey.prototype.each = function(callback) {
