@@ -2,7 +2,7 @@ test( "Simple Getter Setter", function() {
   var firstKey = 'foo';
   var secondKey = 'var';
   var value = 'test1';
-  var map = new MultiKey();
+  var map = MultiKey();
   map.set([firstKey, secondKey], value);
   ok( value == map.get(firstKey, secondKey), "Passed!" );
 });
@@ -11,7 +11,7 @@ test( "Re-write Getter Setter", function() {
   var key1 = 'foo';
   var key2 = 'var';
   var value = 'test1';
-  var map = new MultiKey();
+  var map = MultiKey();
   map.set([key1, key2], value);
   
   var newValue = 'test new Value'; 
@@ -28,7 +28,7 @@ test( "Multiples First Key Getter Setter", function() {
 
   var value1 = 'test2';
   var value2 = 'test2';
-  var map = new MultiKey();
+  var map = MultiKey();
   map.set([firstKey1, secondKey], value1);
   map.set([firstKey2, secondKey], value2);
   
@@ -42,7 +42,7 @@ test( "Multiples Second Key Getter Setter", function() {
   var secondKey2 = 'var2';
   var value1 = 'test1';
   var value2 = 'test2';
-  var map = new MultiKey();
+  var map = MultiKey();
   map.set([fisrtKey, secondKey1], value1);
   map.set([fisrtKey, secondKey2], value2);
   
@@ -59,7 +59,7 @@ test( "Multiples Keys Getter Setter", function() {
   var value2 = 'test2';
   var value3 = 'test3';
   var value4 = 'test4';
-  var map = new MultiKey();
+  var map = MultiKey();
   map.set([fisrtKey1, secondKey1], value1);
   map.set([fisrtKey2, secondKey1], value2);
   map.set([fisrtKey1, secondKey2], value3);

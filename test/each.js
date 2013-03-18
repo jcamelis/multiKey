@@ -6,7 +6,7 @@ test( "Each Iterator", function() {
   var secondKey2 = 'var2';
   var secondKey3 = 'var3';
   var values = ['test0', 'test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8'];
-  var map = new MultiKey();
+  var map = MultiKey();
   map.set([firstKey1, secondKey1], values[0]);
   map.set([firstKey1, secondKey2], values[1]);
   map.set([firstKey1, secondKey3], values[2]);

@@ -7,7 +7,7 @@ Let you create a multi key array map.
 Example: Setter and Getter
 --------------------------
 ```javascript
-var map = new Multikey();
+var map = Multikey();
 
 map.set(['foo', 'var'], 'test1');
 
@@ -27,7 +27,7 @@ Methods:
 
 set([arg1[, arg2 [, argN]]], value);
 ```javascript
-var map = new Multikey();
+var map = Multikey();
 
 map.set(['foo', 'var'], 'value1');
 
@@ -35,14 +35,14 @@ map.set(['foo', 'var'], 'value1');
 
 get(arg1[, arg2 [, argN ] ]);
 ```javascript
-var map = new Multikey();
+var map = Multikey();
 
 map.get('foo', 'var'); // returns 'value1'
 ```
 
 each(callback);
 ```javascript
-var map = new Multikey();
+var map = Multikey();
 
 map.each(function(index, mapItem){
 	//your script
@@ -51,7 +51,7 @@ map.each(function(index, mapItem){
 
 getKeys();
 ```javascript
-var map = new Multikey();
+var map = Multikey();
 
 map.set(['foo', 'var'], 'value1');
 

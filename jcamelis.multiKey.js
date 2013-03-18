@@ -4,6 +4,10 @@
 * @website http://jquerylab.com.ar
 */
 (function(){
+	/**
+	 * @constructor
+	 * @returns {void}
+	 */
 	function MultiKey() {
 		this.keys = {};
 		this.value = null;
@@ -17,7 +21,7 @@
 	MultiKey.prototype.set = function(args, value) {
 		var key = args.shift();
 		if (!this.keys[key]) {
-			this.keys[key] = new MultiKey(1);
+			this.keys[key] = new MultiKey();
 		}
 		if (args.length) {
 			this.keys[key].set(args, value);	
@@ -68,5 +72,11 @@
 		return tmp;
 	};
 
-window.MultiKey = MultiKey;
+	window.MultiKey = function(keys, value) {
+		var map = new MultiKey();
+		if (keys && keys.length && value) {
+			map.set(keys, value);
+		}
+		return map;
+	};
 }());
