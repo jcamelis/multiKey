@@ -1,14 +1,19 @@
 /**
 * @autor jcamelis at gmail.com
 * @github https://github.com/jcamelis/multiKey
-* @website http://jquerylab.com.ar	
+* @website http://jquerylab.com.ar
 */
 (function(){
 	function MultiKey() {
 		this.keys = {};
 		this.value = null;
 	}
-
+	/**
+	 * @public 
+	 * @param {array} args
+	 * @param {Object} value
+	 * @returns {this} Return this to allow chainning
+	 */
 	MultiKey.prototype.set = function(args, value) {
 		var key = args.shift();
 		if (!this.keys[key]) {
@@ -19,8 +24,12 @@
 		} else {
 			this.keys[key].value = value;
 		}
-	}
-
+		return this;
+	};
+	/**
+	 * @public
+	 * @returns {value || Multikey instance}
+	 */
 	MultiKey.prototype.get = function() {
 		if (!arguments.length) return null;
 		var args = [];
@@ -32,8 +41,12 @@
 			return this.keys[key].get(args);
 		}
 		return this.value || this;
-	}
-
+	};
+	/**
+	 * @public 
+	 * @param {function} callback
+	 * @returns {void}
+	 */
 	MultiKey.prototype.each = function(callback) {
 		if (typeof callback !== 'function') return;
 		var i = 0;
@@ -41,15 +54,19 @@
 			callback.apply(this.keys[key],[i, key]);
 			i++;
 		}
-	}
-
-	MultiKey.prototype.getKeys = function(callback) {
+	};
+	/**
+	 * @todo implements order
+	 * @param {String} order
+	 * @returns {Array}
+	 */
+	MultiKey.prototype.getKeys = function(order) {
 		var tmp = [];
 		for (var key in this.keys) {
-			tmp.push(key)
+			tmp.push(key);
 		}
 		return tmp;
-	}
+	};
 
 window.MultiKey = MultiKey;
 }());
