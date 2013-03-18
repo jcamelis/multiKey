@@ -33,11 +33,11 @@ map.set(['foo', 'var'], 'value1');
 
 ```
 
-get(arg1[, arg2 [, argN]]);
+get(arg1[, arg2 [, argN ] ]);
 ```javascript
 var map = new Multikey();
 
-map.get('foo', 'var');
+map.get('foo', 'var'); // returns 'value1'
 ```
 
 each(callback);
