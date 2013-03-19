@@ -71,6 +71,21 @@
 		}
 		return tmp;
 	};
+	/**
+	 * 
+	 * @returns {Object} key | value
+	 */
+	MultiKey.prototype.makeArray = function() {
+		var result = {};
+		if (!this.getKeys().length) {
+			result = this.value;
+		} else {
+			this.each(function(index, key){
+				result[key] = this.makeArray();
+			});
+		}
+		return result;
+	};
 
 	window.MultiKey = function(keys, value) {
 		var map = new MultiKey();
